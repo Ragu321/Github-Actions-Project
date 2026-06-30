@@ -20,6 +20,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4 
+      - name: Resolve Maven Dependencies
+        run: mvn dependency:resolve
       - name: trivy installation 
         run: | 
           sudo apt-get install wget gnupg
